@@ -86,14 +86,13 @@ function playGame() {
     }
 
     if (humanScore === computerScore) {
-        console.log(`Its a tie\n Player score : ${humanScore}\n Computer score ; ${computerScore}`)
+        console.log(`Its a tie. \nPlayer score : ${humanScore}\nComputer score : ${computerScore}`)
     } else if (humanScore > computerScore) {
-        console.log(`Player wins, Computer lost. \n Player score : ${humanScore}\n Computer score ; ${computerScore}`)
+        console.log(`Player wins, Computer lost. \nPlayer score : ${humanScore}\nComputer score : ${computerScore}`)
     } else if (humanScore < computerScore) {
-        console.log(`Payer lost, Computer wins. \nPlayer score : ${humanScore}\n Computer score ; ${computerScore}`)
+        console.log(`Player lost, Computer wins. \nPlayer score : ${humanScore}\nComputer score : ${computerScore}`)
     }
 }
-
 
 playGame()
 //playRound(getHumanChoice(), getComputerChoice())
