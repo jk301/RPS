@@ -23,9 +23,70 @@ function getHumanChoice() {
     } else {
         return alert("Invalid choice")
     }
-
-    
 }
 
-console.log(getComputerChoice())
-console.log(getHumanChoice())
+//console.log(getComputerChoice())
+//console.log(getHumanChoice())
+
+let humanScore = 0;
+let computerScore = 0;
+
+function playRound(humanChoice, ComputerChoice) {
+    humanChoice = humanChoice.toLowerCase()
+  
+   switch(true) {
+
+    case (ComputerChoice === humanChoice):
+        console.log(`Its a tie!\n
+            Your choice: ${humanChoice}\n
+            Computer's choose: ${ComputerChoice}\n
+            Scores: Human = ${humanScore}, Computer = ${computerScore}`)
+        break;
+
+    case (ComputerChoice == "rock" && humanChoice == "paper"):
+        humanScore++;
+        console.log(`Player wins!\n
+            Your choice: ${humanChoice}\n
+            Computer's choose: ${ComputerChoice}\n
+            Scores: Human = ${humanScore}, Computer = ${computerScore}`)
+        break;
+    
+    case (ComputerChoice == "paper" && humanChoice == "scissors"):
+        humanScore++;
+        console.log(`Player wins!\n
+            Your choice: ${humanChoice}\n
+            Computer's choose: ${ComputerChoice}\n
+            Scores: Human = ${humanScore}, Computer = ${computerScore}`)
+        break;
+    
+    case (ComputerChoice == "scissors" && humanChoice == "rock"):
+        humanScore++;
+        console.log(`Player wins!\n
+            Your choice: ${humanChoice}\n
+            Computer's choose: ${ComputerChoice}\n
+            Scores: Human = ${humanScore}, Computer = ${computerScore}`)
+        break;
+
+    default:
+        computerScore++;
+        console.log(`Player lost!\n
+            Your choice: ${humanChoice}\n
+            Computer's choose: ${ComputerChoice}\n
+            Scores: Human = ${humanScore}, Computer = ${computerScore}`)
+        break;
+   }
+}
+
+function playGame() {
+    let round = +(prompt("How many rounds ? : "))
+
+    for (let i = 1; i <= round; i ++){
+        playRound(getHumanChoice(), getComputerChoice())
+    }
+}
+
+
+playGame()
+//playRound(getHumanChoice(), getComputerChoice())
+
+//console.log(`human : ${humanScore}, computer : ${ComputerScore}`)
