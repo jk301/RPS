@@ -1,4 +1,4 @@
-
+// rock-paper-scissors (in console)
 function getComputerChoice() {
     let result = Math.floor(Math.random() * 3) + 1;
 
@@ -25,9 +25,6 @@ function getHumanChoice() {
     }
 }
 
-//console.log(getComputerChoice())
-//console.log(getHumanChoice())
-
 let humanScore = 0;
 let computerScore = 0;
 
@@ -35,7 +32,6 @@ function playRound(humanChoice, ComputerChoice) {
     humanChoice = humanChoice.toLowerCase()
   
    switch(true) {
-
     case (ComputerChoice === humanChoice):
         console.log(`Its a tie!\n
             Your choice: ${humanChoice}\n
@@ -84,17 +80,19 @@ function playGame() {
         console.log(`Round : ${i}`)
         playRound(getHumanChoice(), getComputerChoice())
     }
-
     if (humanScore === computerScore) {
-        console.log(`Its a tie. \nPlayer score : ${humanScore}\nComputer score : ${computerScore}`)
+        console.log(`Its a tie. \n
+            Player score : ${humanScore}\n
+            Computer score : ${computerScore}`)
     } else if (humanScore > computerScore) {
-        console.log(`Player wins, Computer lost. \nPlayer score : ${humanScore}\nComputer score : ${computerScore}`)
+        console.log(`Player wins, Computer lost. \n
+            Player score : ${humanScore}\n
+            Computer score : ${computerScore}`)
     } else if (humanScore < computerScore) {
-        console.log(`Player lost, Computer wins. \nPlayer score : ${humanScore}\nComputer score : ${computerScore}`)
+        console.log(`Player lost, Computer wins. \n
+            Player score : ${humanScore}\n
+            Computer score : ${computerScore}`)
     }
 }
 
 playGame()
-//playRound(getHumanChoice(), getComputerChoice())
-
-//console.log(`human : ${humanScore}, computer : ${ComputerScore}`)
