@@ -40,37 +40,37 @@ function playRound(humanChoice, ComputerChoice) {
         console.log(`Its a tie!\n
             Your choice: ${humanChoice}\n
             Computer's choose: ${ComputerChoice}\n
-            Scores: Human = ${humanScore}, Computer = ${computerScore}`)
+            Scores: Player = ${humanScore}, Computer = ${computerScore}`)
         break;
 
     case (ComputerChoice == "rock" && humanChoice == "paper"):
         humanScore++;
         console.log(`Player wins!\n
-            Your choice: ${humanChoice}\n
+            Player's choice: ${humanChoice}\n
             Computer's choose: ${ComputerChoice}\n
-            Scores: Human = ${humanScore}, Computer = ${computerScore}`)
+            Scores: Player = ${humanScore}, Computer = ${computerScore}`)
         break;
     
     case (ComputerChoice == "paper" && humanChoice == "scissors"):
         humanScore++;
         console.log(`Player wins!\n
-            Your choice: ${humanChoice}\n
+            Player's choice: ${humanChoice}\n
             Computer's choose: ${ComputerChoice}\n
-            Scores: Human = ${humanScore}, Computer = ${computerScore}`)
+            Scores: Player = ${humanScore}, Computer = ${computerScore}`)
         break;
     
     case (ComputerChoice == "scissors" && humanChoice == "rock"):
         humanScore++;
         console.log(`Player wins!\n
-            Your choice: ${humanChoice}\n
+            Player's choice: ${humanChoice}\n
             Computer's choose: ${ComputerChoice}\n
-            Scores: Human = ${humanScore}, Computer = ${computerScore}`)
+            Scores: Player = ${humanScore}, Computer = ${computerScore}`)
         break;
 
     default:
         computerScore++;
         console.log(`Player lost!\n
-            Your choice: ${humanChoice}\n
+            Player's choice: ${humanChoice}\n
             Computer's choose: ${ComputerChoice}\n
             Scores: Human = ${humanScore}, Computer = ${computerScore}`)
         break;
@@ -81,7 +81,16 @@ function playGame() {
     let round = +(prompt("How many rounds ? : "))
 
     for (let i = 1; i <= round; i ++){
+        console.log(`Round : ${i}`)
         playRound(getHumanChoice(), getComputerChoice())
+    }
+
+    if (humanScore === computerScore) {
+        console.log(`Its a tie\n Player score : ${humanScore}\n Computer score ; ${computerScore}`)
+    } else if (humanScore > computerScore) {
+        console.log(`Player wins, Computer lost. \n Player score : ${humanScore}\n Computer score ; ${computerScore}`)
+    } else if (humanScore < computerScore) {
+        console.log(`Payer lost, Computer wins. \nPlayer score : ${humanScore}\n Computer score ; ${computerScore}`)
     }
 }
 
