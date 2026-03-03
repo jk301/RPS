@@ -32,34 +32,38 @@ function playRound(humanChoice, ComputerChoice) {
   
    switch(true) {
     case (ComputerChoice === humanChoice):
-        result.textContent = `Its a tie! \n
-            Your choice: ${humanChoice} \n
-            Computer's choose: ${ComputerChoice} \n
-            Scores: Player = ${humanScore}, Computer = ${computerScore}`
+        result.textContent = 
+`Its a tie!\n
+Player's choice : ${humanChoice}\n
+Computer's choose : ${ComputerChoice}\n
+Scores: Player = ${humanScore}, Computer = ${computerScore}`
         break;
 
     case (ComputerChoice == "rock" && humanChoice == "paper"):
         humanScore++;
-        result.textContent = `Player wins! \n
-            Player's choice: ${humanChoice} \n
-            Computer's choose: ${ComputerChoice} \n
-            Scores: Player = ${humanScore}, Computer = ${computerScore}`
+        result.textContent = 
+`Player wins!\n
+Player's choice : ${humanChoice}\n
+Computer's choose : ${ComputerChoice}\n
+Scores: Player = ${humanScore}, Computer = ${computerScore}`
         break;
     
     case (ComputerChoice == "paper" && humanChoice == "scissors"):
         humanScore++;
-        result.textContent = `Player wins! \n
-            Player's choice: ${humanChoice} \n
-            Computer's choose: ${ComputerChoice} \n
-            Scores: Player = ${humanScore}, Computer = ${computerScore}`
+        result.textContent = 
+`Player wins!\n
+Player's choice : ${humanChoice}\n
+Computer's choose : ${ComputerChoice}\n
+Scores: Player = ${humanScore}, Computer = ${computerScore}`
         break;
     
     case (ComputerChoice == "scissors" && humanChoice == "rock"):
         humanScore++;
-        result.textContent = `Player wins! \n
-            Player's choice: ${humanChoice} \n
-            Computer's choose: ${ComputerChoice} \n
-            Scores: Player = ${humanScore}, Computer = ${computerScore}`
+        result.textContent = 
+`Player wins!\n
+Player's choice : ${humanChoice}\n
+Computer's choose : ${ComputerChoice}\n
+Scores: Player = ${humanScore}, Computer = ${computerScore}`
         break;
     
     case (humanChoice === "invalid"):
@@ -68,25 +72,22 @@ function playRound(humanChoice, ComputerChoice) {
 
     default:
         computerScore++;
-        result.textContent = `Player lost! \n
-            Player's choice: ${humanChoice} \n
-            Computer's choose: ${ComputerChoice} \n
-            Scores: Human = ${humanScore}, Computer = ${computerScore}`
+        result.textContent = 
+`Player lost!\n
+Player's choice : ${humanChoice}\n
+Computer's choose : ${ComputerChoice}\n
+Scores: Human = ${humanScore}, Computer = ${computerScore}`
         break;
    }
 }
 
 function playGame() {
     if (humanScore < 5 && computerScore >= 5) {
-        result.textContent = `Player lost, Computer wins. \n
-            Player score : ${humanScore} \n
-            Computer score : ${computerScore}`
+        result.textContent = `Player lost, Computer wins. \nPlayer score : ${humanScore} \nComputer score : ${computerScore}\n`
         disableButtons();
 
     } else if (humanScore >= 5 && computerScore < 5) {
-        result.textContent = `Player wins, Computer lost. \n
-            Player score : ${humanScore}\n
-            Computer score : ${computerScore}`
+        result.textContent = `Player wins, Computer lost. \nPlayer score : ${humanScore}\nComputer score : ${computerScore}\n`
         disableButtons();
     }
 }
@@ -97,9 +98,6 @@ function disableButtons () {
     paperButton.disabled = true;
     result.appendChild(resetButton);
 }
-
-//playGame();
-
 
 // UI 
 
@@ -145,7 +143,7 @@ scissorsButton.addEventListener("click", () => {
 resetButton.addEventListener("click", () => {
     humanScore = 0;
     computerScore = 0;
-    result.textContent = "Begin again";
+    result.textContent = "Choose an option";
     rockButton.disabled = false;
     paperButton.disabled = false;
     scissorsButton.disabled = false;
